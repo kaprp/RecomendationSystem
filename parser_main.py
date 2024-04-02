@@ -22,7 +22,7 @@ def __create_elem_table__(elements, url, db, driver):
 
     parent = elements.find_element(By.CSS_SELECTOR, f"div.{parentPrice}")
     tmp.price = parent.find_element(By.CSS_SELECTOR, f"span.{elemPrice}").text
-
+#не количество цен а количество оценок
     parent = elements.find_element(By.CSS_SELECTOR, f"label.{elemParentCountRate}")
     # tmp.countRate = parent.find_element(By.CSS_SELECTOR, f"span.{elemCountRate}").text[:-8]
     tmp.countRate = parent.find_element(By.TAG_NAME, "span").text[:-8]
