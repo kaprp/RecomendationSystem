@@ -1,0 +1,121 @@
+2024-03-31 10:53:37,696 [INFO] patching driver executable C:\Users\Dmitriy\appdata\roaming\undetected_chromedriver\undetected_chromedriver.exe
+2024-03-31 10:53:45,502 [WARNING] Connection pool is full, discarding connection: localhost. Connection pool size: 1
+2024-03-31 10:53:45,629 [INFO] Подкатегория: name='Смартфоны', url=https://www.citilink.ru/catalog/smartfony/, id=01b7344b70f631014dbcba229109e2e130e063c52570abd2b376e91ed5d4c090
+2024-03-31 10:53:45,670 [INFO] Подкатегория: name='Сотовые телефоны', url=https://www.citilink.ru/catalog/sotovye-telefony/, id=ffe27b622f7a6a487ad281889067332689ed39ee83f3841e2bb9f83a8ee929ac
+2024-03-31 10:53:45,715 [INFO] Подкатегория: name='Планшеты', url=https://www.citilink.ru/catalog/planshety/, id=dad692189e0c5cd26a8fdde0dc8d34dc54c92bef1cb4e877af363acc6bce1987
+2024-03-31 10:53:45,760 [INFO] Подкатегория: name='Аксессуары для планшетов', url=https://www.citilink.ru/catalog/aksessuary-dlya-planshetov/, id=b000be986c8117bd9ba5d16063328fc70330de81e03aceeb50ef5279daa9b69c
+2024-03-31 10:53:45,806 [INFO] Подкатегория: name='Аксессуары для смартфонов', url=https://www.citilink.ru/catalog/aksessuary-dlya-smartfonov/, id=203dab70ea959a68218806ab40af523ee1ae4529ba8b1be5275daaf82057c1ed
+2024-03-31 10:53:45,848 [INFO] Подкатегория: name='Наушники', url=https://www.citilink.ru/catalog/naushniki/, id=a2f331a01c6b3ceb415374e8d06faac71a1ae46ff99344126c7b1a4f1de5fc71
+2024-03-31 10:53:45,894 [INFO] Подкатегория: name='Кабели для смартфонов и планшетов', url=https://www.citilink.ru/catalog/perehodniki-provoda/, id=a6238ffa6c398beef0c844e3f288d0b1f61d78d440466ae3e72412e79d005a0e
+2024-03-31 10:53:45,954 [INFO] Подкатегория: name='Внешние аккумуляторы (Power Bank)', url=https://www.citilink.ru/catalog/power-bank/, id=80e45707bdb54cadb0cd2b0a14a45a4a321b6379e894b2694a959b597e4a6aa9
+2024-03-31 10:53:46,292 [INFO] Подкатегория: name='Ноутбуки', url=https://www.citilink.ru/catalog/noutbuki/, id=727920141f2af086768c2d7ae9bb0776c7b773f69229aa0f6f61c01e8fb81aa1
+2024-03-31 10:53:46,337 [INFO] Подкатегория: name='Компьютеры и моноблоки', url=https://www.citilink.ru/catalog/kompyutery-i-monobloki/, id=e505ddd8c264effa97dfb6f95f04617bfd2f1cff3fad8a7f3774daf1adda0e94
+2024-03-31 10:53:46,383 [INFO] Подкатегория: name='Комплектующие для ПК', url=https://www.citilink.ru/catalog/komplektuyuschie-dlya-pk/, id=1b52436d3134bf54e7f46bcdea130539d1c86004b59f842a05bdaeed24728561
+2024-03-31 10:53:46,428 [INFO] Подкатегория: name='Жесткие диски и SSD', url=https://www.citilink.ru/catalog/zhestkie-diski-i-ssd/, id=352414f8046a910531ba99fcb6eb04d4995a86330ff81e715abca79951f47b6e
+2024-03-31 10:53:46,472 [INFO] Подкатегория: name='Мониторы', url=https://www.citilink.ru/catalog/monitory/, id=2f513e872ef8e6fe861119e6efacfce4fa330a3bf2ef68e95122e7eae6c16b12
+2024-03-31 10:53:46,518 [INFO] Подкатегория: name='Сетевые хранилища NAS', url=https://www.citilink.ru/catalog/setevye-hranilischa-nas/, id=35fdf0cc96c09a4b3849d3574a79c490f7e7fc946c317b8684b4519b638829c1
+2024-03-31 10:53:46,563 [INFO] Подкатегория: name='Оргтехника', url=https://www.citilink.ru/catalog/orgtehnika/, id=d971f7e511019af18aa5c415c35504690460416e1ee0daf8da6e0872ecdd748f
+2024-03-31 10:53:46,565 [WARNING] Connection pool is full, discarding connection: localhost. Connection pool size: 1
+2024-03-31 10:53:46,607 [INFO] Подкатегория: name='Манипуляторы и устройства ввода', url=https://www.citilink.ru/catalog/manipulyatory-i-ustroistva-vvoda/, id=1c7c605bfd0a0fc12826bf2f8311e2a386160b85251d7c0957da083a6533a6da
+2024-03-31 10:53:46,714 [INFO] Подкатегория: name='Телевизоры', url=https://www.citilink.ru/catalog/televizory/, id=211bd4e9b3ea28acbc2e24efcb4a8792770fb6905fe765a292df3cd232708f26
+2024-03-31 10:53:46,777 [INFO] Подкатегория: name='Кронштейны', url=https://www.citilink.ru/catalog/kronshteiny/, id=1933d4e79e3680d9fd4d46112d37b9327e2b46c453382cbb6c57c075809aa070
+2024-03-31 10:53:46,822 [INFO] Подкатегория: name='Проекторы и экраны', url=https://www.citilink.ru/catalog/proektory-i-ekrany/, id=f69563ce44139526f27120b5904ec9af078d4994507ee515934f5288fe50a3c6
+2024-03-31 10:53:46,867 [INFO] Подкатегория: name='LED панели', url=https://www.citilink.ru/catalog/led-paneli/, id=a932d867d170e2bbaa195b41cb69880b960c33d3b221e408479c0234204429d5
+2024-03-31 10:53:46,913 [INFO] Подкатегория: name='Аудиотехника', url=https://www.citilink.ru/catalog/audiotehnika/, id=e81c4fb263873777048618111c6ef7a3b1a659547f24ef848ac7dfb1e7db902c
+2024-03-31 10:53:46,957 [INFO] Подкатегория: name='Кабели для ТВ и аудио-видео', url=https://www.citilink.ru/catalog/audio-video-kabeli/, id=8595836af68e3c702723cdd15fb5e593809f862cfc862168f5bc2d0a41171ca4
+2024-03-31 10:53:47,002 [INFO] Подкатегория: name='Видеотехника', url=https://www.citilink.ru/catalog/videotehnika/, id=13da070b08683b5252bba2eabf8b162a744a15bbf3d966d07d16542ca3f3ebf0
+2024-03-31 10:53:47,047 [INFO] Подкатегория: name='Спутниковое и цифровое ТВ', url=https://www.citilink.ru/catalog/sputnikovoe-i-cifrovoe-tv/, id=9d46fd62b578a149b9d124d2ef078030a0359ee15f17848185fe52a89577bc8e
+2024-03-31 10:53:47,155 [INFO] Подкатегория: name='Игровые ПК', url=https://www.citilink.ru/catalog/igrovye-pk/, id=d8ddf899a512b632ce35246834e51903e45a65b74b05193b61fa2951276e2c7e
+2024-03-31 10:53:47,203 [INFO] Подкатегория: name='Мониторы для геймеров', url=https://www.citilink.ru/catalog/monitory-dlya-geimerov/, id=7636ff3a74e1c4081a357eda3a9180ab8e3d35985da8b0eaf0b8e2c7122960cd
+2024-03-31 10:53:47,247 [INFO] Подкатегория: name='Sony PlayStation', url=https://www.citilink.ru/catalog/playstation/, id=9f9ef39ddf276d291d68e3651e647d6e01e2bd7f80b1341089138161c3469537
+2024-03-31 10:53:47,415 [INFO] Подкатегория: name='XBox Microsoft', url=https://www.citilink.ru/catalog/xbox/, id=343ac2938a332ab7e4359f5917e93ff0f51c0a91ff2be812292b91a4563b5fe1
+2024-03-31 10:53:47,460 [INFO] Подкатегория: name='Nintendo', url=https://www.citilink.ru/catalog/nintendo/, id=8213e2fc78939e893dba74f9f3cc232468b3912c937da44d2dcc8e6d04d163a7
+2024-03-31 10:53:47,508 [INFO] Подкатегория: name='Другие игровые консоли', url=https://www.citilink.ru/catalog/igrovye-pristavki-igry-i-aksessuary/, id=79d0506308519510f2f5355924e5b32b3f270050ccdaaf63828177639d60771e
+2024-03-31 10:53:47,563 [INFO] Подкатегория: name='Мебель для геймеров', url=https://www.citilink.ru/catalog/mebel-dlya-geimerov/, id=5ab5dad5ebb83fda5fdf9a93b458434fc399a302f9660408b2e28ccff34e285d
+2024-03-31 10:53:47,612 [INFO] Подкатегория: name='Игровой мерч', url=https://www.citilink.ru/catalog/igrovoi-merch/, id=450e7316b3eb71d8a4a61ad75c237d67e72b481009a528af0f8f67acb166c88a
+2024-03-31 10:53:47,719 [INFO] Подкатегория: name='Смарт-часы и аксессуары', url=https://www.citilink.ru/catalog/smart-chasy-i-aksessuary/, id=10568cc0289ccc3212696eda77f93583f7e7deb51b9b3c900c2f0aaaf0f09a4e
+2024-03-31 10:53:47,757 [INFO] Подкатегория: name='Квадрокоптеры и аксессуары', url=https://www.citilink.ru/catalog/kvadrokoptery-i-aksessuary/, id=89befc010ec1a3d8234339cb56816d727cb08e89970b12b593b99ebfcc2c9a65
+2024-03-31 10:53:47,802 [INFO] Подкатегория: name='Электротранспорт', url=https://www.citilink.ru/catalog/elektrotransport/, id=aee601ff35bc4000b181cec8ed5cf93155340745ab1f38feee20772c04d422cd
+2024-03-31 10:53:47,847 [INFO] Подкатегория: name='Умные и портативные колонки', url=https://www.citilink.ru/catalog/umnye-i-portativnye-kolonki/, id=d6b5f412219d52d0ea1810562c181e1e87b11519b7f491ae376b0b1564d88be4
+2024-03-31 10:53:47,891 [INFO] Подкатегория: name='Портативная техника', url=https://www.citilink.ru/catalog/portativnaya-tehnika/, id=b4f4e2c0d749165e6376be347923960959ac51b232c61ee3389aadfbe0434883
+2024-03-31 10:53:47,936 [INFO] Подкатегория: name='Электронные книги', url=https://www.citilink.ru/catalog/elektronnye-knigi/, id=48cc583e19a5b3e913a773642e53daedc693c67bd32f2c6f9f9286570f160b13
+2024-03-31 10:53:47,980 [INFO] Подкатегория: name='Рации и аксессуары', url=https://www.citilink.ru/catalog/racii-i-aksessuary/, id=98aa0f3f12e31476b8c52e54dfb80b6fc8baaf63e26cac939ca4d40f614a72a6
+2024-03-31 10:53:48,027 [INFO] Подкатегория: name='Фототехника', url=https://www.citilink.ru/catalog/fototehnika/, id=7021955031a60ecc4a9f270f553ab9780a19bdc80c0012fea60f66b4887be241
+2024-03-31 10:53:48,135 [INFO] Подкатегория: name='Крупная бытовая техника', url=https://www.citilink.ru/catalog/krupnaya-bytovaya-tehnika/, id=a45a00f3afaea2f2808564e5ec24d53e5ffe9806c0ad7ab619d2fe12bf84ec39
+2024-03-31 10:53:48,184 [INFO] Подкатегория: name='Встраиваемая техника', url=https://www.citilink.ru/catalog/vstraivaemaya-tehnika/, id=4db4f27df9d06649669f9c4f1c6223085c0230a08cb76cc7641fd5f2a204a431
+2024-03-31 10:53:48,229 [INFO] Подкатегория: name='Вытяжки', url=https://www.citilink.ru/catalog/vytyazhki/, id=2236f5aa6eef59848d45175bcc2dd0de9bf9f4ac0b194665c186eb369d462ecc
+2024-03-31 10:53:48,273 [INFO] Подкатегория: name='Кофемашины, кофеварки', url=https://www.citilink.ru/catalog/kofemashiny-kofevarki/, id=931b11c8c4dcbd79221434d74037fd41db75b1121007f76f0e18fad6c181b3ea
+2024-03-31 10:53:48,319 [INFO] Подкатегория: name='Техника для кухни', url=https://www.citilink.ru/catalog/melkaya-bytovaya-tehnika/, id=698b74249c9e77c5f2c4323a1536236b90eed83fab325c202e6761b1e0d5296b
+2024-03-31 10:53:48,363 [INFO] Подкатегория: name='Принадлежности для бытовой техники', url=https://www.citilink.ru/catalog/prinadlezhnosti-dlya-bytovoi-tehniki/, id=24860bfe14d72ac6f959751d786fcff4370522a4cf8e352272c589fc84429ad2
+2024-03-31 10:53:48,421 [INFO] Подкатегория: name='Водонагреватели', url=https://www.citilink.ru/catalog/vodonagrevateli/, id=11a78674875e6f392e6ed491b61bd88b8488e3dc702cbf5916efc48795fef143
+2024-03-31 10:53:48,464 [INFO] Подкатегория: name='Кондиционеры', url=https://www.citilink.ru/catalog/kondicionery/, id=a164afea429e5e60b5cad8e60beb659e339dca85f15b618003a0ac85980447db
+2024-03-31 10:53:48,582 [INFO] Подкатегория: name='Товары для укладки', url=https://www.citilink.ru/catalog/tovary-dlya-ukladki/, id=3ad11fd79fd12afb39b49ad8e12a6f971d2066fd27a77b25fa7cf7469ada8397
+2024-03-31 10:53:48,622 [INFO] Подкатегория: name='Товары для здоровья', url=https://www.citilink.ru/catalog/tovary-dlya-zdorovya/, id=ce6b2e0c4c5ecb3854750a70cae02c85a2a515e5fbedafed79573de912009d63
+2024-03-31 10:53:48,667 [INFO] Подкатегория: name='Товары для красоты', url=https://www.citilink.ru/catalog/tovary-dlya-krasoty/, id=cee04c35d5f56012c53fb932bc1ba03346f8c2de881503dd12ba4e5dbe204ad9
+2024-03-31 10:53:48,712 [INFO] Подкатегория: name='Бритвы и эпиляторы', url=https://www.citilink.ru/catalog/britvy-i-epilyatory/, id=d29509f593025d93d680435d2b49f968eb9eff978654041224fcf70c232ccfed
+2024-03-31 10:53:48,755 [INFO] Подкатегория: name='Зубные щетки и ирригаторы', url=https://www.citilink.ru/catalog/zubnye-schetki-i-irrigatory/, id=7f31178e8e7cd99f391d947fbf607e5c3d4053659a5e55e95a4017f5fbc03313
+2024-03-31 10:53:48,801 [INFO] Подкатегория: name='Медицинское оборудование', url=https://www.citilink.ru/catalog/medicinskoe-oborudovanie/, id=bc026ce5b04a576ba234551476e1008054a0ba07a6e25a9e2ce9d03028ba50be
+2024-03-31 10:53:48,868 [INFO] Подкатегория: name='Стерилизаторы и подогреватели', url=https://www.citilink.ru/catalog/sterilizatory-i-podogrevateli/, id=7def6a92b8c17bdd5d4654317ded9a3053a6161d233fc8ff2f5cb4480cadc0d9
+2024-03-31 10:53:48,975 [INFO] Подкатегория: name='Умный дом', url=https://www.citilink.ru/catalog/umnyi-dom/, id=f66c0493caee99c999188a0d58f06468bc8cf7fd424e69b3ae4c95cb20c098fe
+2024-03-31 10:53:49,014 [INFO] Подкатегория: name='Видеонаблюдение', url=https://www.citilink.ru/catalog/videonablyudenie/, id=732ab240044264252514abe823bb450a99d3a63daa1e5854a04a01aa6b72945e
+2024-03-31 10:53:49,059 [INFO] Подкатегория: name='Системы контроля и управления доступом (СКУД)', url=https://www.citilink.ru/catalog/sistemy-bezopasnosti/, id=0b71f84d66c0a007ba50fe83850aaac96bc4cfcbdacb76f6be3c56d33ee9c935
+2024-03-31 10:53:49,104 [INFO] Подкатегория: name='Домофония', url=https://www.citilink.ru/catalog/domofoniya/, id=3f398eef0c9ad21331585138b2f024911d44311862a26237a98cf5c71526a245
+2024-03-31 10:53:49,149 [INFO] Подкатегория: name='Приборы для наблюдения', url=https://www.citilink.ru/catalog/pribory-dlya-nablyudeniya/, id=d8f7e863a508c5140f303ae9e9e47e2f3fa7511e7cfee8ea227daa2908086fab
+2024-03-31 10:53:49,255 [INFO] Подкатегория: name='Готовые решения', url=https://www.citilink.ru/catalog/gotovye-resheniya/, id=1f1bad00393eeb59de10a07541a8bb4599dd265232d6dad2dd11ac9782a9adbc
+2024-03-31 10:53:49,295 [INFO] Подкатегория: name='Мебель офисная', url=https://www.citilink.ru/catalog/mebel/, id=68701a724d799932d6eaefa835c04b24ad858ef7ff7454976b010d5d2de5d51f
+2024-03-31 10:53:49,340 [INFO] Подкатегория: name='Аксессуары для мебели и интерьера', url=https://www.citilink.ru/catalog/aksessuary-dlya-mebeli-i-interera/, id=a24595f8c6feff5a1d420d05261a709e5c840d2280ac60e70a3731bc6353616f
+2024-03-31 10:53:49,383 [INFO] Подкатегория: name='Конференц-связь и call-центры', url=https://www.citilink.ru/catalog/konferenc-svyaz-i-call-centry/, id=1977bc959fbd525b134d5fadda7d55d3131cd90f7122f10301d37bf059d79a5c
+2024-03-31 10:53:49,428 [INFO] Подкатегория: name='Торговое и банковское оборудование', url=https://www.citilink.ru/catalog/torgovoe-i-bankovskoe-oborudovanie/, id=f1f1599a75901c3d6a8eebdffe0b19af683d1405612eda15fb34f733b643b5d8
+2024-03-31 10:53:49,474 [INFO] Подкатегория: name='Офисная техника', url=https://www.citilink.ru/catalog/ofisnaya-tehnika/, id=f86c8e5a954c167708d9b819fd855559a260d022fc925d0c03b42927e5660050
+2024-03-31 10:53:49,518 [INFO] Подкатегория: name='Расходные материалы для оргтехники', url=https://www.citilink.ru/catalog/rashodnye-materialy-dlya-orgtehniki/, id=39daa12614559824fca012fc36d3728df270da55413646d778ba8442f9af6652
+2024-03-31 10:53:49,564 [INFO] Подкатегория: name='Запчасти для оргтехники', url=https://www.citilink.ru/catalog/zapchasti-dlya-orgtehniki/, id=127be47bd6fc57065a5f35b5e9bc840566fba019e4c6a26bf2cb62fbd99ef0c0
+2024-03-31 10:53:49,621 [WARNING] Connection pool is full, discarding connection: localhost. Connection pool size: 1
+2024-03-31 10:53:49,671 [INFO] Подкатегория: name='Бумага', url=https://www.citilink.ru/catalog/bumazhnaya-produkciya/, id=cfc1fe043fb5e1fc6c32191c836271314fe0097cb29822967e549215b60ecb51
+2024-03-31 10:53:49,710 [INFO] Подкатегория: name='Изделия из бумаги', url=https://www.citilink.ru/catalog/izdeliya-iz-bumagi/, id=1cd9b1de1cbc18c871b8f5852e67f8a02ed6499bcb82e065d9e9fe739071344d
+2024-03-31 10:53:49,754 [INFO] Подкатегория: name='Офисная канцелярия', url=https://www.citilink.ru/catalog/ofisnaya-kancelyariya/, id=d445df701d5c62fa0ef939d5f8e677436dcbe1d7e7cca23f25807bcdc244fa51
+2024-03-31 10:53:49,821 [INFO] Подкатегория: name='Письменные принадлежности', url=https://www.citilink.ru/catalog/pismennye-prinadlezhnosti/, id=70c1befa7c9adef9f38b15564cbe08ca89512d1ddb087079a6b060091ca80a95
+2024-03-31 10:53:49,866 [INFO] Подкатегория: name='Товары для художников', url=https://www.citilink.ru/catalog/tovary-dlya-hudozhnikov/, id=ccb3af6b539250ae448a09d8d8a29552ba090a82eb321bce301cb026e73231ce
+2024-03-31 10:53:49,910 [INFO] Подкатегория: name='Товары для школы', url=https://www.citilink.ru/catalog/tovary-dlya-shkoly/, id=7e8f6672e5d194c1c8c3a2c108310724547f800fbccfeb0a2b1107c8d99f8a26
+2024-03-31 10:53:49,955 [INFO] Подкатегория: name='Папки, файлы, системы архивации', url=https://www.citilink.ru/catalog/papki-faily-sistemy-arhivacii/, id=7660451c85745381e68c8f487eb261b5fb6756ed3b7b29e563630fc312f50783
+2024-03-31 10:53:49,999 [INFO] Подкатегория: name='Сувениры и бизнес-подарки', url=https://www.citilink.ru/catalog/suveniry-i-biznes-podarki/, id=9db71bb59f6b93d6b7cfa2aa0aba1f25fe2bf489bbf2e0a77fc3c67628ea7153
+2024-03-31 10:53:50,107 [INFO] Подкатегория: name='Электроинструмент', url=https://www.citilink.ru/catalog/elektroinstrument/, id=a8605aabb0aa62f8efa8513b0dedf9dfe2041a7603a93703a36bf1bf508d1695
+2024-03-31 10:53:50,168 [INFO] Подкатегория: name='Аккумуляторный инструмент и техника', url=https://www.citilink.ru/catalog/akkumulyatornyi-instrument-i-tehnika/, id=843f403c09dcc8886aa9254cf98d6c6444b4b84c70799bd6c4dc08594dc97e17
+2024-03-31 10:53:50,269 [INFO] Подкатегория: name='АКБ и ЗУ для инструмента', url=https://www.citilink.ru/catalog/akb-i-zu-dlya-instrumenta/, id=e15b67d82a37a1e62fac005c0f5408f9873e7c92901e75076430204e9b093d9f
+2024-03-31 10:53:50,319 [INFO] Подкатегория: name='Силовая техника', url=https://www.citilink.ru/catalog/silovaya-tehnika/, id=d46d69fbea158fee3ff49dfccc12e1f9b227dbb9ec7b23c1ecc91ef4901a21e4
+2024-03-31 10:53:50,380 [INFO] Подкатегория: name='Оборудование для уборки', url=https://www.citilink.ru/catalog/oborudovanie-dlya-uborki/, id=661bbdb28c367fed614d71b752209b63a0bd3f68f68936416659ead9b2a6f540
+2024-03-31 10:53:50,427 [INFO] Подкатегория: name='Наборы инструментов', url=https://www.citilink.ru/catalog/nabory-instrumentov/, id=47c8d54253eac8cc7ab4de8f406697779016677772e3aa5715eca9d8dd4662f5
+2024-03-31 10:53:50,470 [INFO] Подкатегория: name='Расходные материалы', url=https://www.citilink.ru/catalog/rashodnye-materialy/, id=76bdbc75729f757db1696e692b7b2f3782d80c5bb2e4a40be5f3eb5b63c4e253
+2024-03-31 10:53:50,517 [INFO] Подкатегория: name='Сварочное оборудование', url=https://www.citilink.ru/catalog/svarochnoe-oborudovanie/, id=eea093edcd472e812f5b4a1540818450830da5dac5af8f955ee4874ecfb0e232
+2024-03-31 10:53:50,624 [INFO] Подкатегория: name='Цепные пилы', url=https://www.citilink.ru/catalog/cepnye-pily/, id=bb1e4ed9779d03ea076bdc8bd3109cda3b538a136d3652d4e77deb98d3bbc749
+2024-03-31 10:53:50,672 [INFO] Подкатегория: name='Отопление и климат', url=https://www.citilink.ru/catalog/otoplenie-i-klimat/, id=a0dad6b6bf987d58ab802ee9f72c41385b766f1267ade4fb14a985de8505399e
+2024-03-31 10:53:50,717 [INFO] Подкатегория: name='Рюкзаки на все случаи жизни', url=https://www.citilink.ru/catalog/vse-ryukzaki/, id=f8518d36bb05c944a56b442c1e0f079bb49ff10d74b75afe3d4c40fb8f348ebe
+2024-03-31 10:53:50,763 [INFO] Подкатегория: name='Садовая техника', url=https://www.citilink.ru/catalog/sadovaya-tehnika/, id=a3ff38b592d12180d1ba95108bcb088509f1462367ab4a66b9ea36a8f9999dbe
+2024-03-31 10:53:50,807 [INFO] Подкатегория: name='Автоэлектроника', url=https://www.citilink.ru/catalog/avtoelektronika/, id=45a5d78690dbb88ca7289bf18526f9295417c1a0f4b27fd8b7b1ed3aa048bf13
+2024-03-31 10:53:50,852 [INFO] Подкатегория: name='Освещение', url=https://www.citilink.ru/catalog/osveschenie/, id=627aa6b551ae437d38019418bbe00c583e562f14dc26b5930d24aefbcc925649
+2024-03-31 10:53:50,896 [INFO] Подкатегория: name='Спорт и отдых', url=https://www.citilink.ru/catalog/sport-i-otdyh/, id=a04d33875b2633ad49b1723d645c79063f98e5e5fdb1230510829e18707e2e9f
+2024-03-31 10:53:50,941 [INFO] Подкатегория: name='Оснастка к садовой технике', url=https://www.citilink.ru/catalog/osnastka-k-sadovoi-tehnike/, id=661e6bc26e79fdbc529fd8967fdb805bf92bc9b65045acf1e7eb317416f0bab3
+2024-03-31 10:53:50,976 [INFO] В базе найдено 104 непроверенных категорий. Это должно занять 0:08:40 при условии непрерывного безошибочного парсинга.
+2024-03-31 10:53:56,755 [WARNING] Connection pool is full, discarding connection: localhost. Connection pool size: 1
+2024-03-31 10:54:01,953 [WARNING] Connection pool is full, discarding connection: localhost. Connection pool size: 1
+2024-03-31 10:54:21,961 [ERROR] Неизвестное положение парсера на https://www.citilink.ru/catalog/vytyazhki/. Ожидалось, что он находится в списке товаров или в списке подкатегорий. Состояние страницы запечатлено на скриншоте: 349cfe606c160d1445331777929c2728cd4c1fa73f06fae29b17040a8b4d899e.png
+2024-03-31 10:54:23,669 [WARNING] Connection pool is full, discarding connection: localhost. Connection pool size: 1
+2024-03-31 10:54:48,432 [ERROR] Неизвестное положение парсера на https://www.citilink.ru/catalog/avtoelektronika/. Ожидалось, что он находится в списке товаров или в списке подкатегорий. Состояние страницы запечатлено на скриншоте: 66841d06ba5cecbb4f079a9e42a6aece1b471124c98f83d88d365b87c05e51d3.png
+2024-03-31 10:54:50,009 [WARNING] Connection pool is full, discarding connection: localhost. Connection pool size: 1
+2024-03-31 10:55:29,825 [ERROR] Неизвестное положение парсера на https://www.citilink.ru/catalog/planshety/. Ожидалось, что он находится в списке товаров или в списке подкатегорий. Состояние страницы запечатлено на скриншоте: 672ba7aa61b85e92d6faf0260a1b3f36ec778135b283326ebdc6d8d6c7383c85.png
+2024-03-31 10:55:29,825 [WARNING] Connection pool is full, discarding connection: localhost. Connection pool size: 1
+2024-03-31 10:55:30,928 [WARNING] Connection pool is full, discarding connection: localhost. Connection pool size: 1
+2024-03-31 10:56:56,065 [WARNING] Connection pool is full, discarding connection: localhost. Connection pool size: 1
+2024-03-31 12:23:59,367 [INFO] patching driver executable C:\Users\Dmitriy\appdata\roaming\undetected_chromedriver\undetected_chromedriver.exe
+2024-03-31 12:24:00,272 [INFO] В базе найдено 104 непроверенных категорий. Это должно занять 0:08:40 при условии непрерывного безошибочного парсинга.
+2024-03-31 12:24:04,989 [WARNING] Connection pool is full, discarding connection: localhost. Connection pool size: 1
+2024-03-31 12:24:11,233 [WARNING] Connection pool is full, discarding connection: localhost. Connection pool size: 1
+2024-03-31 12:24:30,299 [ERROR] Неизвестное положение парсера на https://www.citilink.ru/catalog/akb-i-zu-dlya-instrumenta/. Ожидалось, что он находится в списке товаров или в списке подкатегорий. Состояние страницы запечатлено на скриншоте: 1e66f005c51e2c9b99b88d26c0a35bd43d505e3f545d71ad46942cde8e7dacfa.png
+2024-03-31 12:24:32,390 [WARNING] Connection pool is full, discarding connection: localhost. Connection pool size: 1
+2024-03-31 12:24:37,885 [WARNING] Connection pool is full, discarding connection: localhost. Connection pool size: 1
+2024-03-31 12:24:39,913 [WARNING] Connection pool is full, discarding connection: localhost. Connection pool size: 1
+2024-03-31 12:24:57,489 [ERROR] Неизвестное положение парсера на https://www.citilink.ru/catalog/naushniki/. Ожидалось, что он находится в списке товаров или в списке подкатегорий. Состояние страницы запечатлено на скриншоте: f066762ec1991ccc94fa8a32d423c634a53e0048f9ed74fbdab1e49cdb33e5a3.png
+2024-03-31 12:24:59,165 [WARNING] Connection pool is full, discarding connection: localhost. Connection pool size: 1
+2024-03-31 12:26:24,021 [WARNING] Connection pool is full, discarding connection: localhost. Connection pool size: 1
+2024-03-31 13:59:32,333 [INFO] patching driver executable C:\Users\Dmitriy\appdata\roaming\undetected_chromedriver\undetected_chromedriver.exe
+2024-03-31 13:59:33,279 [INFO] В базе найдено 104 непроверенных категорий. Это должно занять 0:08:40 при условии непрерывного безошибочного парсинга.
+2024-03-31 13:59:38,026 [WARNING] Connection pool is full, discarding connection: localhost. Connection pool size: 1
