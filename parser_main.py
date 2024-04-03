@@ -18,6 +18,8 @@ from Database.PyDBControl import Database
 def __create_elem_table__(elements, url, db, driver):
     tmp = HP()
 
+    pause(randint(25, 40))
+
     tmp.name = elements.find_element(By.CSS_SELECTOR, f"h1.{elemTitle}").text
 
     parent = elements.find_element(By.CSS_SELECTOR, f"div.{parentPrice}")
@@ -66,8 +68,10 @@ def __create_elem_table__(elements, url, db, driver):
     for i in range(len(titles)):
         if titles[i].text == "Бренд":
             tmp.brand = values[i].find_element(By.TAG_NAME, "span").text
+        pause(randint(2, 3))
         if titles[i].text == "Модель":
             tmp.modelTitle = values[i].find_element(By.TAG_NAME, "span").text
+        pause(randint(2, 3))
         if titles[i].text == "Крепление":
             tmp.fasteningMethod = values[i].find_element(By.TAG_NAME, "span").text
         if titles[i].text == "Тип конструкции":
@@ -78,6 +82,7 @@ def __create_elem_table__(elements, url, db, driver):
             tmp.volumeControl = values[i].find_element(By.TAG_NAME, "span").text
         if titles[i].text == "Тип регулятора громкости":
             tmp.typeVolControl = values[i].find_element(By.TAG_NAME, "span").text
+        pause(randint(2, 3))
         if titles[i].text == "Тип, акустический":
             tmp.typeAcousticType = values[i].find_element(By.TAG_NAME, "span").text
         if titles[i].text == "Тип звукоизлучателя":
@@ -93,6 +98,7 @@ def __create_elem_table__(elements, url, db, driver):
             tmp.microphoneMount = values[i].find_element(By.TAG_NAME, "span").text
         if titles[i].text == "Подключение":
             tmp.typeCon = values[i].find_element(By.TAG_NAME, "span").text
+        pause(randint(2, 3))
         if titles[i].text == "Версия Bluetooth":
             tmp.versionBluetooth = values[i].find_element(By.TAG_NAME, "span").text
         if titles[i].text == "Поддержка профиля":
@@ -111,6 +117,7 @@ def __create_elem_table__(elements, url, db, driver):
             tmp.chargingCase = values[i].find_element(By.TAG_NAME, "span").text
         if titles[i].text == "Питание наушников":
             tmp.typeCharging = values[i].find_element(By.TAG_NAME, "span").text
+        pause(randint(2, 3))
         if titles[i].text == "Режим объемного звучания":
             tmp.typeSoundScheme = values[i].find_element(By.TAG_NAME, "span").text
         if titles[i].text == "Степень защиты":
@@ -126,6 +133,8 @@ def __create_elem_table__(elements, url, db, driver):
 
     db.__insert__(nameTable, tmp, HP)
 
+    pause(randint(15, 30))
+
 
 class Parser:
     def __init__(self, name):
@@ -133,15 +142,18 @@ class Parser:
         self.dbmodule = Database(name)
         self.dbmodule.__table_create__(nameTable, HP)
         self.driver = webdriver.Chrome()
+        self.driver.delete_all_cookies()
         self.indexPage = 11
 
     def __get_urls_elems__(self):
         while self.indexPage < max_page + 1:
+            pause(randint(15, 30))
             self.driver.get(webresource + str(self.indexPage))
             self.indexPage += 1
-            pause(randint(5, 12))
+            pause(randint(10, 15))
             parent_element = self.driver.find_element(By.CSS_SELECTOR, f"div.{itemParent}")
             elements = parent_element.find_elements(By.CSS_SELECTOR, f"a.{itemPage}")
+            pause(randint(15, 30))
             for i in elements:
                 self.productsUrls.append(i.get_attribute("href"))
 
@@ -166,5 +178,6 @@ class Parser:
 if __name__ == "__main__":
     p = Parser("db.db")
     p.__get_urls_elems__()
+
     p.__getElms__()
     p.__del__()
