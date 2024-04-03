@@ -34,7 +34,24 @@ def __create_elem_table__(elements, url, db, driver):
     parent = driver.find_element(By.CSS_SELECTOR, f"div.{elemParentCountRate}")
     tmp.countRate = parent.find_elements(By.CSS_SELECTOR, f"span.{elemCount}")[0].text[:-8]
 
+    pause(randint(5, 12))
 
+    driver.get(url + "otzyvy/?page=1&sort=WORST")
+
+    parent = driver.find_element(By.CSS_SELECTOR, f"div.{parentReviews}")
+
+    reviews = parent.find_elements(By.CSS_SELECTOR, f"div.{review}")
+
+    revs = ""
+
+    for i in reviews:
+        s = i.find_elements(By.CSS_SELECTOR, f"span.{textReview}")
+        t = ""
+        for j in s:
+            t += "." + j.text
+        revs += "|" + t
+
+    tmp.reviews = revs
 
     pause(randint(5, 12))
 

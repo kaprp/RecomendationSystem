@@ -3,15 +3,11 @@ webresource = "https://www.citilink.ru/catalog/naushniki/?p="
 
 max_page = 12
 
+parentReviews = "ewtznq60"
 
+review = "e151209f0"
 
-parentReview = "e12wdlvo0"
-
-prentReviewRate = "app-catalog-mvwp97"
-
-parenReviewText = "app-catalog-1dr8djz"
-
-reviewsText = "e1ys5m360"
+textReview = "e1ys5m360"
 
 nameTable = "Goods"
 
