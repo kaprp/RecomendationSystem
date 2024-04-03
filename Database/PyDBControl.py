@@ -27,7 +27,6 @@ class Database:
     def __table_create__(self, nametable, model):
         qur = (f"CREATE TABLE IF NOT EXISTS {nametable} "
                f"( ID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, ")
-        print(len(get_attributes(model)))
         columns = ', '.join(f"{value} {self.__to_type__(type_value)}"
                             for value, type_value in get_attributes(model))
         qur += columns + ");"
@@ -41,6 +40,7 @@ class Database:
         placeholders = ', '.join('?' for _ in get_attributes(model))
         qur += columns + f") VALUES ({placeholders});"
         values = get_attribute_values(values)
+        print(len(values))
         print(qur)
         self.cur.execute(qur, values)
         self.conn.commit()

@@ -14,68 +14,36 @@ class IPYZ:
 @dataclass
 class Headphones:
     name: str = ""
+    brand: str = ""
     modelTitle: str = ""
-    typeModel: str = ""
-    country: str = ""
     typeConnect: str = ""
     typeConstruction: str = ""
     mainColor: str = ""
-    materialHousing: str = ""
-    materialEarPads: str = ""
     fasteningMethod: str = ""
-    microphoneLocation: str = ""
     microphoneMount: str = ""
-    price: str = ""
     typeAcousticDesign: str = ""
     typeCountEmitter: str = ""
     typeCharging: str = ""
-    url: str = ""
-    maker: str = ""
-
-    # images: list = field(default_factory=list)
-    # codecs: list = field(default_factory=list)
-    # functionsKeys: list = field(default_factory=list)
-    # functionalFeatures: list = field(default_factory=list)
-    # equipment: list = field(default_factory=list)
-    # otherFeatures: list = field(default_factory=list)
-    # reviews: list = field(default_factory=list)
+    connectCable: str = ""
+    ChargingUsb: bool = False
     codecs: str = ""
-    functionsKeys: str = ""
-    functionalFeatures: str = ""
-    equipment: str = ""
-    otherFeatures: str = ""
-    reviews: str = ""
-
-    countEmitter: int = 0
-    assurance: int = 0
-    countRate: int = 0
-    # Степень пылевлагозашиты
-    ipyz = IPYZ().__get_item__()
-    typeSoundScheme: float = 0.0
-    versionBluetooth: float = 0.0
-    battery: float = 0.0
-    weight: float = 0.0
-    chargingCase: float = 0.0
-    lengthCable: float = 0.0
-    averageRate: float = 0.0
-    impendance: float = 0.0
-
+    radius: str = ""
+    ipyz: str = ""
+    typeSoundScheme: str = ""
+    versionBluetooth: str = ""
+    battery: str = ""
+    weight: str = ""
+    chargingCase: str = ""
+    time: str = ""
+    sense: str = ""
+    freqRange: str = ""
+    diametr: str = ""
     microphone: bool = False
-    gamingType: bool = False
-    detachableMicrophone: bool = False
-    backlight: bool = False
-    childDesign: bool = False
-    sportFactor: bool = False
-    cableCharging: bool = False
-    activeNoiseReduction: bool = False
-    transparentMode: bool = False
-    touchControl: bool = False
     volumeControl: bool = False
-    controlSmartphone: bool = False
-    fastCharging: bool = False
-
-
-@dataclass
-class HeadphonesCit(Headphones):
-    # properties: list = field(default_factory=list)
-    properties: str = ""
+    typeVolControl: str = ""
+    url: str = ""
+    price: str = ""
+    countRate: str = ""
+    averageRate: str = ""
+    typeAcousticType: str = ""
+    typeCon: str = ""

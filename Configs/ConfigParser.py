@@ -1,7 +1,17 @@
 browser = 'chromedriver.exe'
 webresource = "https://www.citilink.ru/catalog/naushniki/?p="
 
-max_page = 13
+max_page = 12
+
+
+
+parentReview = "e12wdlvo0"
+
+prentReviewRate = "app-catalog-mvwp97"
+
+parenReviewText = "app-catalog-1dr8djz"
+
+reviewsText = "e1ys5m360"
 
 nameTable = "Goods"
 
@@ -9,18 +19,19 @@ elemPropertyValPare = "e1ckvoeh0"
 
 elemPropertyTitle = "e1ckvoeh1"
 
+# elemParentProperty = "e13lq8os0"
 # elemParentProperty = "app-catalog-rxgulu"
 elemParentProperty = "app-catalog-15159qd"
 
 elemRate = "e1ys5m360"
 
-elemParentRate = "app-catalog-ai6yje"
+elemParentRate = "e14w4zd70"
 
 # изменить класс
 
-elemCountPrice = "app-catalog-1isemmb"
+elemCount = "app-catalog-1isemmb"
 
-elemParentCountPrice = "app-catalog-bo68ab"
+elemParentCountRate = "app-catalog-jdon92"
 
 parentPrice = "e13ri1pq0"
 
