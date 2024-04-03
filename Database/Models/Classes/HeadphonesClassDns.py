@@ -47,3 +47,4 @@ class Headphones:
     averageRate: str = ""
     typeAcousticType: str = ""
     typeCon: str = ""
+    reviews: str = ""

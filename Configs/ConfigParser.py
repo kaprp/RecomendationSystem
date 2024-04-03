@@ -29,9 +29,9 @@ elemParentRate = "e14w4zd70"
 
 # изменить класс
 
-elemCount = "app-catalog-1isemmb"
+elemCount = "e1ys5m360"
 
-elemParentCountRate = "app-catalog-jdon92"
+elemParentCountRate = "app-catalog-8wh2af"
 
 parentPrice = "e13ri1pq0"
 

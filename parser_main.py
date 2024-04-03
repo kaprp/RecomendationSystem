@@ -23,8 +23,6 @@ def __create_elem_table__(elements, url, db, driver):
     parent = elements.find_element(By.CSS_SELECTOR, f"div.{parentPrice}")
     tmp.price = parent.find_element(By.CSS_SELECTOR, f"span.{elemPrice}").text
     # не количество цен а количество оценок
-    parent = elements.find_element(By.CSS_SELECTOR, f"div.{elemParentCountRate}")
-    tmp.countRate = parent.find_elements(By.CSS_SELECTOR, f"span.{elemCount}")[0].text
 
     pause(randint(7, 15))
 
@@ -32,6 +30,12 @@ def __create_elem_table__(elements, url, db, driver):
 
     parent = driver.find_element(By.CSS_SELECTOR, f"span.{elemParentRate}")
     tmp.averageRate = parent.find_element(By.CSS_SELECTOR, f"span.{elemRate}").text
+
+    parent = driver.find_element(By.CSS_SELECTOR, f"div.{elemParentCountRate}")
+    tmp.countRate = parent.find_elements(By.CSS_SELECTOR, f"span.{elemCount}")[0].text[:-8]
+
+
+
     pause(randint(5, 12))
 
     driver.get(url + "properties/")
@@ -123,7 +127,6 @@ class Parser:
             elements = parent_element.find_elements(By.CSS_SELECTOR, f"a.{itemPage}")
             for i in elements:
                 self.productsUrls.append(i.get_attribute("href"))
-            print(self.productsUrls)
 
     def __print_elems__(self):
         for i in self.productsUrls:
