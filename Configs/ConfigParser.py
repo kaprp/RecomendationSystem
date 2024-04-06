@@ -1,7 +1,7 @@
 browser = 'chromedriver.exe'
 webresource = "https://www.citilink.ru/catalog/naushniki/?p="
 
-max_page = 1
+max_page = 12
 
 parentReviews = "ewtznq60"
 

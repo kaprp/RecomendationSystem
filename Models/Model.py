@@ -113,13 +113,13 @@ model.add(Dense(1, activation='sigmoid'))
 model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 
 # Обучение модели
-model.fit(X_train, y_train, epochs=100, batch_size=32, validation_data=(X_test, y_test))
+model.fit(X_train, y_train, epochs=500, batch_size=32, validation_data=(X_test, y_test))
 
 # Оценка модели
 loss, accuracy = model.evaluate(X_test, y_test)
 print(f'Accuracy: {accuracy}')
 # Введи текст
-text = [""]
+text = ["Все было просто отвратительно"]
 X_new = text_vectorization(text)
 
 # Предсказание тональности
@@ -127,5 +127,5 @@ predictions = model.predict(X_new)
 
 # Вывод предсказаний
 for text, prediction in zip(text, predictions):
-    sentiment = "Positive" if prediction <= 0.5 else "Negative"
+    sentiment = "Positive" if prediction > 0.5 else "Negative"
     print(f'Text: {text} - Sentiment: {sentiment} (Probability: {prediction[0]})')

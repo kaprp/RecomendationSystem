@@ -143,7 +143,7 @@ class Parser:
         self.dbmodule.__table_create__(nameTable, HP)
         self.driver = webdriver.Chrome()
         self.driver.delete_all_cookies()
-        self.indexPage = 11
+        self.indexPage = 1
 
     def __get_urls_elems__(self):
         while self.indexPage < max_page + 1:
