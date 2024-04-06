@@ -11,98 +11,138 @@
 #
 # print(sia.polarity_scores(text))
 #
-
-import nltk
-from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
-import pymorphy2
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.svm import SVC
-from sklearn.pipeline import Pipeline
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score
-
-# Загрузим список стоп-слов для русского языка из NLTK
-nltk.download('stopwords')
-
-# Создадим объект для морфологического анализа
-morph_analyzer = pymorphy2.MorphAnalyzer()
-
-
-# Функция для предобработки русского текста
-def preprocess_russian_text(text):
-    # Инициализация анализатора pymorphy2
-    morph = pymorphy2.MorphAnalyzer()
-
-    # Токенизация текста и удаление пунктуации
-    tokens = nltk.word_tokenize(text)
-    tokens = [token for token in tokens if token.isalnum()]
-
-    # Удаление стоп-слов
-    stop_words = set(stopwords.words('russian'))
-    tokens = [token for token in tokens if token.lower() not in stop_words]
-
-    # Лемматизация токенов
-    lemmatized_tokens = [morph.parse(token)[0].normal_form for token in tokens]
-
-    return ' '.join(lemmatized_tokens)
-
-# Пример данных для обучения модели
-positive_texts  = [
-    "Сегодня прекрасный день, полный радости и удивительных возможностей.",
-    "Я рад проснуться и начать новый день с улыбкой на лице.",
-    "Всё вокруг так красиво и ярко, словно природа сама радуется вместе со мной.",
-    "Я благодарен за все возможности, которые дарит мне жизнь, и готов использовать их на полную мощность.",
-    "У меня есть замечательные друзья и близкие, которые всегда поддержат меня в трудную минуту.",
-    "Мир так прекрасен, и я рад, что я часть этого удивительного мира.",
-    "Я полон энергии и готов принять все вызовы, которые принесет этот день.",
-    "У меня есть мечты, и я знаю, что они сбудутся, потому что я верю в себя и свои силы.",
-    "Я благодарен за каждый момент жизни и готов делать его еще более ярким и насыщенным.",
-    "Я люблю себя и ценю свою жизнь, и это делает меня счастливым.",
-    "Сегодняшний день будет прекрасным, потому что я сам создаю свою судьбу и наполняю ее радостью и любовью."
-]
-negative_texts =  [
-    "Сегодня ужасный день, полный горя и разочарований.",
-    "Я расстроен просыпаться и начинать новый день с тяжёлым сердцем.",
-    "Всё вокруг такое унылое и серое, словно природа печалится вместе со мной.",
-    "Я разочарован во всех возможностях, которые дарит мне жизнь, и не вижу смысла использовать их.",
-    "У меня нет настоящих друзей и близких, которые могли бы поддержать меня в трудную минуту.",
-    "Мир так безысходен, и я печален, что я часть этого унылого мира.",
-    "Я без энергии и не готов принять даже малейший вызов, который принесет этот день.",
-    "У меня есть мечты, но я сомневаюсь, что они когда-либо сбудутся, потому что я не верю в себя и свои силы.",
-    "Я разочарован в каждом моменте жизни и не готов делать его даже немного лучше.",
-    "Я ненавижу себя и не ценю свою жизнь, и это делает меня несчастным.",
-    "Сегодняшний день будет ужасным, потому что я не в состоянии создать свою судьбу и наполнять её радостью и любовью."
-]
-
-# Создадим списки для текстов и их меток
-texts = [preprocess_russian_text(text) for text in positive_texts + negative_texts]
-labels = [1] * len(positive_texts) + [0] * len(negative_texts)
-
-# Разделим данные на обучающий и тестовый наборы
-X_train, X_test, y_train, y_test = train_test_split(texts, labels, test_size=0.2, random_state=42)
-
-# Создадим конвейер для обработки текста и классификации
-text_clf = Pipeline([
-    ('tfidf', TfidfVectorizer()),
-    ('clf', SVC(kernel='linear'))
-])
-
-# Обучим модель на обучающем наборе
-text_clf.fit(X_train, y_train)
-
-# Оценим качество модели на тестовом наборе
-predicted = text_clf.predict(X_test)
-accuracy = accuracy_score(y_test, predicted)
-print("Accuracy:", accuracy)
-
-input_text = preprocess_russian_text("Это был ужасный день!")
-
-# Классификация текста с использованием обученной модели
-predicted_label = text_clf.predict([input_text])[0]
-
-# Вывод результата
-if predicted_label == 1:
-    print("Модель считает текст положительным.")
-else:
-    print("Модель считает текст отрицательным.")
+#
+# import nltk
+# from nltk.corpus import stopwords
+# from nltk.tokenize import word_tokenize
+# import pymorphy2
+# from sklearn.feature_extraction.text import TfidfVectorizer
+# from sklearn.svm import SVC
+# from sklearn.pipeline import Pipeline
+# from sklearn.model_selection import train_test_split
+# from sklearn.metrics import accuracy_score
+# import gensim
+# import numpy as np
+#
+# from negative import negative_texts
+# from positive import positive_texts
+#
+# # Загрузим список стоп-слов для русского языка из NLTK
+# nltk.download('stopwords')
+#
+# # Создадим объект для морфологического анализа
+# morph_analyzer = pymorphy2.MorphAnalyzer()
+#
+# common = [positive_texts, negative_texts]
+#
+#
+# # Функция для предобработки русского текста
+# def preprocess_russian_text(text):
+#     # Инициализация анализатора pymorphy2
+#     morph = pymorphy2.MorphAnalyzer()
+#
+#     text = text.lower()
+#
+#     # Токенизация текста и удаление пунктуации
+#     tokens = nltk.word_tokenize(text)
+#     tokens = [token for token in tokens if token.isalnum()]
+#
+#     # Удаление стоп-слов
+#     stop_words = set(stopwords.words('russian'))
+#     tokens = [token for token in tokens if token.lower() not in stop_words]
+#
+#     # Лемматизация токенов
+#     lemmatized_tokens = [morph.parse(token)[0].normal_form for token in tokens]
+#
+#     return ' '.join(lemmatized_tokens)
+#
+#
+# def vectorize_text_with_rusentilex(text, rusentilex):
+#     # Предположим, что rusentilex - это словарь RuSentiLex, где ключи - слова, значения - их тональность
+#
+#     # Разделение текста на отдельные слова
+#     words = text.split()
+#
+#     # Инициализация счетчиков для позитивных и негативных слов
+#     positive_count = 0
+#     negative_count = 0
+#
+#     # Подсчет количества позитивных и негативных слов в тексте
+#     for word in words:
+#         if word in rusentilex:
+#             if rusentilex[word] == 'positive':
+#                 positive_count += 1
+#             elif rusentilex[word] == 'negative':
+#                 negative_count += 1
+#
+#     # Возвращение вектора с количеством позитивных и негативных слов
+#     return [positive_count, negative_count]
+#
+#
+# import numpy as np
+#
+# # Предположим, что rusentilex - это словарь RuSentiLex, где ключи - слова, значения - их тональность
+# rusentilex = {'хороший': 'positive', 'плохой': 'negative', 'замечательный': 'positive', 'ужасный': 'negative'}
+#
+#
+# # Преобразование текста в векторное представление
+# def vectorize_text_with_rusentilex(text, rusentilex):
+#     # Разделение текста на отдельные слова
+#     words = text.split()
+#
+#     # Инициализация счетчиков для позитивных и негативных слов
+#     positive_count = 0
+#     negative_count = 0
+#
+#     # Подсчет количества позитивных и негативных слов в тексте
+#     for word in words:
+#         if word in rusentilex:
+#             if rusentilex[word] == 'positive':
+#                 positive_count += 1
+#             elif rusentilex[word] == 'negative':
+#                 negative_count += 1
+#
+#     # Возвращение вектора с количеством позитивных и негативных слов
+#     return np.array([positive_count, negative_count])
+#
+#
+# # Пример текстов для обучения
+# training_texts = [
+#     "Этот фильм был просто замечательным!",
+#     "Эта книга мне не понравилась, слишком скучная.",
+#     "Моя поездка была ужасной из-за плохой погоды.",
+#     "Я рад, что наконец-то нашел хороший ресторан в этом районе."
+# ]
+#
+# # Метки классов для обучения (положительные - 1, отрицательные - 0)
+# training_labels = np.array([1, 0, 0, 1])
+#
+# # Обучение нейросети
+# from keras.models import Sequential
+# from keras.layers import Dense
+#
+# # Создание модели нейросети
+# model = Sequential()
+# model.add(Dense(8, input_dim=2, activation='relu'))
+# model.add(Dense(1, activation='sigmoid'))
+#
+# # Компиляция модели
+# model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
+#
+# # Преобразование текстов в векторы и обучение модели
+# X_train = np.array([vectorize_text_with_rusentilex(text, rusentilex) for text in training_texts])
+# y_train = training_labels
+# model.fit(X_train, y_train, epochs=100, batch_size=2)
+#
+# # Пример текста для оценки тональности
+# test_text = "Этот день был просто ужасным!"
+#
+# # Преобразование текста в вектор и оценка тональности с помощью модели
+# X_test = np.array([vectorize_text_with_rusentilex(test_text, rusentilex)])
+# prediction = model.predict(X_test)
+#
+# # Вывод результата
+# if prediction > 0.5:
+#     print("Текст имеет положительную тональность.")
+# else:
+#     print("Текст имеет отрицательную тональность.")
