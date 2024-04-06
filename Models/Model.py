@@ -118,8 +118,8 @@ model.fit(X_train, y_train, epochs=100, batch_size=32, validation_data=(X_test, 
 # Оценка модели
 loss, accuracy = model.evaluate(X_test, y_test)
 print(f'Accuracy: {accuracy}')
-
-text = ["Хороший звук хорошая цена"]
+# Введи текст
+text = [""]
 X_new = text_vectorization(text)
 
 # Предсказание тональности
