@@ -13,9 +13,58 @@ import numpy as np
 
 from keras.models import Sequential
 from keras.layers import Dense
+import csv
 
-from positive import positive_texts
-from negative import negative_texts
+from positivepy import *
+from negative import *
+#
+# file_pos = "pos.csv"
+# file_neg = "neg.csv"
+#
+# positive_texts = []
+# negative_texts = []
+#
+# with open(file_pos, 'r') as file:
+#     csv_reader = csv.reader(file)
+#
+#     # Проход по каждой строке CSV файла и добавление ее в список данных
+#     for row in csv_reader:
+#         positive_texts.append(row)
+#
+# print(positive_texts)
+#
+# with open(file_neg, 'r') as file:
+#     csv_reader = csv.reader(file)
+#
+#     # Проход по каждой строке CSV файла и добавление ее в список данных
+#     for row in csv_reader:
+#         negative_texts.append(row)
+#
+
+file_path = 'pos.txt'
+file_path_neg = 'neg.txt'
+# Число строк для чтения
+num_lines = 10000
+encoding = 'utf8'
+# Создайте пустой список для хранения строк файла
+positive_texts = []
+negative_texts = []
+# Откройте текстовый файл и считайте заданное количество строк
+with open(file_path, 'r', encoding=encoding) as file:
+    for _ in range(num_lines):
+        line = file.readline().strip()  # Считываем строку и удаляем символ новой строки
+        if not line:  # Если достигнут конец файла, выходим из цикла
+            break
+        positive_texts.append(line)
+
+
+with open(file_path_neg, 'r', encoding=encoding) as file:
+    for _ in range(num_lines):
+        line = file.readline().strip()  # Считываем строку и удаляем символ новой строки
+        if not line:  # Если достигнут конец файла, выходим из цикла
+            break
+        negative_texts.append(line)
+
 
 nltk.download('punkt')
 nltk.download('stopwords')
@@ -106,18 +155,23 @@ y_train, y_test = y[:split_index], y[split_index:]
 
 # Создание модели
 model = Sequential()
-model.add(Dense(64, activation='relu', input_shape=(X_train.shape[1],)))
+model.add(Dense(256, activation='relu', input_shape=(X_train.shape[1],)))
+model.add(Dense(128, activation='relu'))
 model.add(Dense(1, activation='sigmoid'))
 
 # Компиляция модели
 model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 
 # Обучение модели
-model.fit(X_train, y_train, epochs=500, batch_size=32, validation_data=(X_test, y_test))
+model.fit(X_train, y_train, epochs=200, batch_size=32, validation_data=(X_test, y_test))
+
+
 
 # Оценка модели
 loss, accuracy = model.evaluate(X_test, y_test)
 print(f'Accuracy: {accuracy}')
+
+model.save("analytics3.keras")
 # Введи текст
 text = ["Все было просто отвратительно"]
 X_new = text_vectorization(text)
@@ -127,5 +181,5 @@ predictions = model.predict(X_new)
 
 # Вывод предсказаний
 for text, prediction in zip(text, predictions):
-    sentiment = "Positive" if prediction > 0.5 else "Negative"
+    sentiment = "Positive" if prediction <= 0.5 else "Negative"
     print(f'Text: {text} - Sentiment: {sentiment} (Probability: {prediction[0]})')
