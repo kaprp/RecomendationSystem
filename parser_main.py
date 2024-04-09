@@ -1,15 +1,12 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.chrome.options import Options
 from time import sleep as pause
 from random import *
 
 from Configs.ConfigParser import *
 
 # Импорт моделей
-from Database.Models.Classes.HeadphonesClassDns import Headphones as HP
+from Database.HeadphonesClassDns import Headphones as HP
 
 # Подключение API базы данных
 from Database.PyDBControl import Database

@@ -1,53 +1,21 @@
-#pip install --upgrade
-
-import pymorphy2
+import csv
+import numpy as np
 import nltk
 from nltk.corpus import stopwords
-
-import gensim.models
+from nltk.tokenize import word_tokenize
+import pymorphy2
+import gensim
 from gensim.models import Word2Vec
-from gensim.utils import simple_preprocess
-from gensim.models import TfidfModel
 from gensim.corpora import Dictionary
-import numpy as np
-
+from gensim.models import TfidfModel
+from gensim.utils import simple_preprocess
+from sklearn.model_selection import train_test_split
 from keras.models import Sequential, load_model
-from keras.layers import Dense
-import csv
-import pickle
-
-
-from positivepy import *
-from negative import *
-
-# file_pos = "pos.csv"
-# file_neg = "neg.csv"
-#
-# positive_texts = []
-# negative_texts = []
-#
-# with open(file_pos, 'r') as file:
-#     csv_reader = csv.reader(file)
-#
-#     # Проход по каждой строке CSV файла и добавление ее в список данных
-#     for row in csv_reader:
-#         positive_texts.append(row)
-#
-# print(positive_texts)
-#
-# with open(file_neg, 'r') as file:
-#     csv_reader = csv.reader(file)
-#
-#     # Проход по каждой строке CSV файла и добавление ее в список данных
-#     for row in csv_reader:
-#         negative_texts.append(row)
-
-
+from keras.layers import Dense, Dropout
+from keras.callbacks import EarlyStopping
 
 file = "kartaslovsent.csv"
 
-positive_texts = []
-negative_texts = []
 words = []
 
 with open(file, 'r', encoding='utf-8') as file:
@@ -55,8 +23,8 @@ with open(file, 'r', encoding='utf-8') as file:
     i = 0
     # Проход по каждой строке CSV файла и добавление ее в список данных
     for row in csv_reader:
-        if i != 0 :
-            words.append((row[0],row[2]))
+        if i != 0:
+            words.append((row[0], row[2]))
         i += 1
 
 nltk.download('punkt')
@@ -72,11 +40,10 @@ def preprocess_russian_text(text):
     text = text.lower()
 
     # Токенизация текста и удаление пунктуации
-    tokens = nltk.word_tokenize(text)
+    tokens = word_tokenize(text)
     tokens = [token for token in tokens if token.isalnum()]
 
     # Удаление стоп-слов
-
     tokens = [token for token in tokens if token.lower() not in stop_words]
 
     # Лемматизация токенов
@@ -97,15 +64,17 @@ def text_vectorization(texts, model_type='word2vec', vector_size=1000):
     Возвращает:
     numpy.array: Матрица векторов текста.
     """
-
+    print(model_type)
     if model_type == 'word2vec':
         # Предварительная обработка текстов
-        # processed_texts = [simple_preprocess(text) for text in texts]
         processed_texts = [preprocess_russian_text(text) for text in texts]
         # Обучение модели Word2Vec
         model = Word2Vec(sentences=processed_texts, vector_size=vector_size, min_count=1)
+        model.save("1.bin")
         # Получение векторов для каждого текста
-        vectors = np.array([np.mean([model.wv[word] for word in text.split() if word in model.wv] or [np.zeros(vector_size)], axis=0) for text in processed_texts])
+        vectors = np.array(
+            [np.mean([model.wv[word] for word in text.split() if word in model.wv] or [np.zeros(vector_size)], axis=0)
+             for text in processed_texts])
 
     elif model_type == 'tfidf':
         # Предварительная обработка текстов и создание словаря
@@ -117,113 +86,83 @@ def text_vectorization(texts, model_type='word2vec', vector_size=1000):
         tfidf_vectors = tfidf_model[corpus]
         # Преобразование TF-IDF векторов в numpy массив
         vectors = np.vstack([gensim.matutils.sparse2full(vector, len(dictionary)) for vector in tfidf_vectors])
-
+    elif model_type == 'word2vecsave':
+        processed_texts = [preprocess_russian_text(text) for text in texts]
+        model = Word2Vec.load("1.bin")
+        vectors = np.array(
+            [np.mean([model.wv[word] for word in text.split() if word in model.wv] or [np.zeros(vector_size)], axis=0)
+             for text in processed_texts])
     else:
         raise ValueError("Неподдерживаемый тип модели. Допустимые значения: 'word2vec' или 'tfidf'.")
 
     return vectors
-
-def predict_sentiment(text):
-    # Векторизация нового текста
-    vectorized_text = text_vectorization(text)
-    # Предсказание тональности с помощью модели
-    prediction = model.predict(vectorized_text)
-    # Определение тональности на основе предсказания
-    sentiment = "Positive" if prediction <= 0.5 else "Negative"
-    return sentiment, prediction[0]
-
-# X_positive = text_vectorization(positive_texts)
-# X_negative = text_vectorization(negative_texts)
 #
-# # Создание меток для положительных и отрицательных текстов
-# y_positive = np.ones(len(positive_texts))
-# y_negative = np.zeros(len(negative_texts))
+# #
+# # Разделение данных на обучающий и тестовый наборы
+# X = np.array([word[0] for word in words])
+# y =  np.array([float(word[1]) for word in words])
 #
-# # Объединение текстов и меток
-# X = np.concatenate((X_positive, X_negative), axis=0)
-# y = np.concatenate((y_positive, y_negative), axis=0)
-
-X = text_vectorization([i[0] for i in words])
-Y = [float(i[1]) for i in words]
-print(X)
-# Перемешивание данных
-indices = np.arange(len(X))
-np.random.shuffle(indices)
-X = [X[i] for i in indices]
-Y = [Y[i] for i in indices]
+# X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+#
+# # Векторизация текста с использованием модели Word2Vec
+# X_train_vectors = text_vectorization(X_train, model_type='word2vec')
+# X_test_vectors = text_vectorization(X_test, model_type='word2vec')
+#
+# # Создание модели нейронной сети
+# model = Sequential([
+#     Dense(128, activation='relu', input_shape=(X_train_vectors.shape[1],)),
+#     Dropout(0.5),
+#     Dense(64, activation='relu'),
+#     Dropout(0.5),
+#     Dense(1, activation='sigmoid')
+# ])
+#
+# model.compile(optimizer='adam',
+#               loss='binary_crossentropy',
+#               metrics=['accuracy'])
+#
+# # Обучение модели
+# early_stopping = EarlyStopping(patience=3, restore_best_weights=True)
+# model.fit(X_train_vectors, y_train, epochs=20, batch_size=32, validation_split=0.1, callbacks=[early_stopping])
 #
 #
-# Разделение на обучающую и тестовую выборки (например, 80% обучающих данных и 20% тестовых данных)
-split_index = int(0.8 * len(X))
-X_train, X_test = X[:split_index], X[split_index:]
-y_train, y_test = Y[:split_index], Y[split_index:]
-
-X_train = np.array(X_train)
-X_test = np.array(X_test)
-y_train = np.array(y_train)
-y_test = np.array(y_test)
-
-
-
-# Создание модели
-model = Sequential()
-model.add(Dense(256, activation='relu', input_shape=(X_train.shape[1],)))
-model.add(Dense(128, activation='relu'))
-model.add(Dense(1, activation='sigmoid'))
-
-# Компиляция модели
-model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
-
-# Обучение модели
-model.fit(X_train, y_train, epochs=100, batch_size=32, validation_data=(X_test, y_test))
-
-
-
-# Оценка модели
-loss, accuracy = model.evaluate(X_test, y_test)
-print(f'Accuracy: {accuracy}')
-
-
-# Введи текст
-text = ["Плохо"]
-X_new = text_vectorization(text)
-
-# Предсказание тональности
-predictions = model.predict(X_new)
-
-
-model.save("analytics4.keras")
-
-with open("word_dictionary.pkl", "wb") as f:
-    pickle.dump(model.wv, f)
-
-# Вывод предсказаний
-for text, prediction in zip(text, predictions):
-    sentiment = "Positive" if prediction <= 0.5 else "Negative"
-    print(f'Text: {text} - Sentiment: {sentiment} (Probability: {prediction[0]})')
-
-# loaded_model = load_model("analytics4.keras")
+# model.save("sentiment_analysis_model2.h5")
 #
-#     # Введенные тексты для анализа тональности
-# texts = ["Хорошо"]
+# # Оценка модели
+# loss, accuracy = model.evaluate(X_test_vectors, y_test)
+# print("Test Accuracy:", accuracy)
 #
-#     # Векторизация введенных текстов
-# X_new = text_vectorization(texts)
-#
-#     # Предсказание тональности
-# predictions = loaded_model.predict(X_new)
-#
-#     # Вывод предсказаний
-# for text, prediction in zip(texts, predictions):
-#         sentiment = "Positive" if prediction <= 0.5 else "Negative"
-#         print(f'Text: {text} - Sentiment: {sentiment} (Probability: {prediction[0]})')
+model = load_model("sentiment_analysis_model.h5")
 
-model = load_model("analytics4.keras")
+# Примеры текстов для классификации
+texts = [
+    "Этот фильм был просто потрясающим, я наслаждался каждой минутой!",
+    "Ужасный опыт, не рекомендую этот продукт никому.",
+    "Отличное обслуживание в этом ресторане, всегда рад возвращаться.",
+    "Качество товара оставляет желать лучшего, я очень разочарован.",
+    "Этот книжный магазин - мое новое любимое место, так много интересных книг!",
+    "Кофе в этом кафе просто ужасный, никогда больше сюда не пойду."
+]
 
-# Загрузка словаря слов
-with open("word_dictionary.pkl", "rb") as f:
-    word_dictionary = pickle.load(f)
+# Предобработка текстов
+# Векторизация текстов
+vector_size = 1000  # Размер вектора, должен соответствовать тому, который использовался при обучении модели
+X_vectors = text_vectorization(texts, model_type='word2vecsave', vector_size=vector_size)
 
-text = "Ваш новый текст"
-sentiment, confidence = predict_sentiment(text)
-print(f"Тональность текста: {sentiment}, Уверенность: {confidence}")
+
+
+print(X_vectors)
+# Классификация текстов
+predictions = model.predict(X_vectors)
+
+# Преобразование вероятностей в метки классов
+labels = ["Отрицательный", "Положительный"]
+predicted_classes = [labels[int(round(pred[0]))] for pred in predictions]
+
+# Вывод результатов
+for text, label in zip(texts, predicted_classes):
+    print("Текст:", text)
+    print("Прогноз:", label)
+    print()
+
+
