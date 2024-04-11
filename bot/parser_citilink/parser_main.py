@@ -3,13 +3,13 @@ from selenium.webdriver.common.by import By
 from time import sleep as pause
 from random import *
 
-from Configs.ConfigParser import *
+from bot.Configs.ConfigParser import *
 
 # Импорт моделей
-from Database.HeadphonesClassDns import Headphones as HP
+from bot.Database.HeadphonesClassDns import Headphones as HP
 
 # Подключение API базы данных
-from Database.PyDBControl import Database
+from bot.Database.PyDBControl import Database
 
 
 def __create_elem_table__(elements, url, db, driver):
@@ -171,10 +171,10 @@ class Parser:
         self.driver.close()
         self.driver.quit()
 
-
-if __name__ == "__main__":
-    p = Parser("db.db")
-    p.__get_urls_elems__()
-
-    p.__getElms__()
-    p.__del__()
+#
+# if __name__ == "__main__":
+#     p = Parser("db.db")
+#     p.__get_urls_elems__()
+#
+#     p.__getElms__()
+#     p.__del__()
