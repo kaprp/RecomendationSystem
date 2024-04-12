@@ -1,0 +1,7 @@
+# Проект требует следующие библиотеки:
+    Keras
+    NLTK
+    Gensim
+    Scikit-learn
+    aiogram
+    Selenium
