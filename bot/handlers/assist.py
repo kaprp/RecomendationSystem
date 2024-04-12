@@ -7,7 +7,6 @@ from aiogram.fsm.context import FSMContext
 from bot.filters.chat_type import ChatTypeFilter
 from bot.keyboards.for_assist import *
 from bot.keyboards.for_start import get_start_keyboard
-from bot.handlers.start_private import router
 
 import logging
 from dataclasses import dataclass
@@ -17,32 +16,10 @@ import string
 
 b = Database("db.db")
 data = b.__get_all__("Goods")
-# sentence_to_analyze = "Я считаю что данный продукт является одним з лучших в своем сегменте "
-#
-# Создаем экземпляр класса Data
+
 data_handler = Data()
-
-# Загружаем обученную модель Word2Vec
 data_handler.load_wordvec_model("testing.bin")
-
-# Получаем общий вектор предложения
-
-
-# Загружаем обученную модель Keras
 data_handler.load_keras_model("keras_model2.keras")
-
-
-# common_vector = data_handler.get_common_vectors([sentence_to_analyze])
-# Предсказываем тональность предложения с помощью модели Keras
-# prediction = data_handler.keras_model.predict(common_vector)
-#
-# print(prediction)
-#
-# # Выводим результат
-# if prediction >= 0.5:
-#     print("Позитивный отзыв")
-# else:
-#     print("Негативный отзыв")
 
 
 @dataclass

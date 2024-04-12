@@ -1,19 +1,16 @@
 from aiogram import Router, F
 from aiogram.filters import Command
-from aiogram.types import Message, ReplyKeyboardRemove, InlineKeyboardButton, Location
-from aiogram.utils.keyboard import InlineKeyboardBuilder
+from aiogram.types import Message
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import StatesGroup, State
-from datetime import datetime
 
 from bot.filters.chat_type import ChatTypeFilter
 
 from bot.keyboards.for_start import get_start_keyboard
 from bot.keyboards.main_menu import get_main_menu
 
-from bot.bd.bd import add_user, delete_user, search_user, check_user
+from bot.bd.bd import add_user, search_user
 from bot.bd.user import User
-
 
 
 

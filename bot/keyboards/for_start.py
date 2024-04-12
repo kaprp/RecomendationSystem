@@ -1,11 +1,9 @@
-from aiogram import types
 from aiogram.utils.keyboard import ReplyKeyboardBuilder
 
 
 def get_start_keyboard() -> ReplyKeyboardBuilder:
     kb=ReplyKeyboardBuilder()
     kb.button(text="Рекомендации по наушникам")
-    # kb.button(text="Пользовательские настройки")
     kb.button(text="Список доступных команд")
     kb.button(text="Узнать обо мне")
     kb.adjust(2,1)
