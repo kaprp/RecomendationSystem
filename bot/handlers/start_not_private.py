@@ -2,7 +2,7 @@ from aiogram import Router, F
 from aiogram.filters import Command
 from aiogram.types import Message
 
-from filters.chat_type import ChatTypeFilter 
+from bot.filters.chat_type import ChatTypeFilter
 # Подключаем фильтр на всё кроме личной переписки
 router2 = Router()
 router2.message.filter(

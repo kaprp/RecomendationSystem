@@ -6,13 +6,13 @@ from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import StatesGroup, State
 from datetime import datetime
 
-from filters.chat_type import ChatTypeFilter 
+from bot.filters.chat_type import ChatTypeFilter
 
-from keyboards.for_start import get_start_keyboard
-from keyboards.main_menu import get_main_menu
+from bot.keyboards.for_start import get_start_keyboard
+from bot.keyboards.main_menu import get_main_menu
 
-from bd.bd import add_user, delete_user, search_user, check_user
-from bd.user import User
+from bot.bd.bd import add_user, delete_user, search_user, check_user
+from bot.bd.user import User
 
 
 
@@ -56,20 +56,20 @@ async def cmd_help(message: Message):
     f"В данный момент доступны команды:\n"
     f"/help - список действующих команд\n"
     f"/start - открыть главное меню\n"
-    f"/assist - получить рекомендацию в выборе техники\n"
+    f"/assist - получить рекомендацию в выборе наушников\n"
     f"/settings - открыть пользовательские настройки\n"
     f"/about_me - узнать обо мне\n",
     parse_mode="HTML",
     reply_markup=get_main_menu()
     )
 #Ответ на команду /assist или её аналог из клавиатуры
-@router.message(Command("assist"))
-@router.message(F.text.lower() == "получить рекомендацию")
-async def message_help(message: Message):
-    await message.answer(
-    f"Извините, но в данный момент этот раздел находится в разработке.\n",
-    parse_mode="HTML"
-    )
+#@router.message(Command("assist"))
+#@router.message(F.text.lower() == "получить рекомендацию")
+#async def message_help(message: Message):
+#    await message.answer(
+#    f"Извините, но в данный момент этот раздел находится в разработке.\n",
+#    parse_mode="HTML"
+#    )
 
     
 #Ответ на команду /about_me или её аналог из клавиатуры

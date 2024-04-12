@@ -5,10 +5,10 @@ from aiogram.utils.keyboard import ReplyKeyboardBuilder
 def category_keyboard() -> ReplyKeyboardBuilder:
     kb=ReplyKeyboardBuilder()
     kb.button(text="Наушники")
-    kb.button(text="Мышь")
-    kb.button(text="Клавиатура")
-    kb.button(text="Монитор")
-    kb.adjust(2,2)
+#    kb.button(text="Мышь")
+#    kb.button(text="Клавиатура")
+#    kb.button(text="Монитор")
+#    kb.adjust(2,2)
     return kb.as_markup(
         resize_keyboard=True,
         one_time_keyboard=True

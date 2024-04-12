@@ -1,6 +1,6 @@
 import asyncio
 import logging
-
+import dataclasses
 from aiogram import Bot, Dispatcher, types
 from handlers import start_private, start_not_private,settings,assist
 

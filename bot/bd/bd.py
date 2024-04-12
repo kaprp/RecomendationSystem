@@ -1,7 +1,7 @@
 import pyodbc
 import logging
-from bd.user import User
-from bd.settings import Settings
+from bot.bd.user import User
+from bot.bd.settings import Settings
 
 #logging.basicConfig(level=logging.ERROR, filename="Errors.log",filemode="w",
 #                    format="%(asctime)s %(levelname)s %(message)s")

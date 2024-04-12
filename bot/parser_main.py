@@ -2,6 +2,8 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from time import sleep as pause
 from random import *
+import datetime
+import shutil
 
 from bot.Configs.ConfigParser import *
 
@@ -142,6 +144,8 @@ class Parser:
         self.driver.delete_all_cookies()
         self.indexPage = 1
 
+
+
     def __get_urls_elems__(self):
         while self.indexPage < max_page + 1:
             pause(randint(15, 30))
@@ -171,10 +175,15 @@ class Parser:
         self.driver.close()
         self.driver.quit()
 
-#
-# if __name__ == "__main__":
-#     p = Parser("db.db")
-#     p.__get_urls_elems__()
-#
-#     p.__getElms__()
-#     p.__del__()
+
+if __name__ == "__main__":
+    while True:
+        p = Parser("test.db")
+        p.__get_urls_elems__()
+        p.__getElms__()
+        current_time = datetime.datetime.now().time()
+        target_time = datetime.time(18, 0)
+        while current_time <= target_time:
+            current_time = datetime.datetime.now().time()
+        shutil.copyfile("test.db", "db.db")
+        p.__del__()

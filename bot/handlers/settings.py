@@ -4,12 +4,12 @@ from aiogram.filters import Command
 from aiogram.types import Message
 from aiogram.fsm.context import FSMContext
 
-from filters.chat_type import ChatTypeFilter 
-from keyboards.for_settings import *
-from keyboards.for_start import get_start_keyboard
-from bd.bd import get_settings, change_settings
-from bd.settings import Settings
-from handlers.start_private import router
+from bot.filters.chat_type import ChatTypeFilter
+from bot.keyboards.for_settings import *
+from bot.keyboards.for_start import get_start_keyboard
+from bot.bd.bd import get_settings, change_settings
+from bot.bd.settings import Settings
+from bot.handlers.start_private import router
 
 
 
@@ -35,26 +35,26 @@ viewed_m_use = ["dns", "эльдорадо"]      # список использ�
 viewed_m_not_use = ["мвидео", "ситилинк"]# список не используемых для анализа маркетплесов
 
 
-@settings_router.message(Command("settings"))
-@settings_router.message(F.text.lower() == "пользовательские настройки")
-async def settings(message: Message, state: FSMContext):
-    #Достаём из БД настройки пользователя
-    user_settings = get_settings(message.chat.id)
-
-    switch = {
-        True:"да",
-        False:"нет"
-    }
-
-    await message.answer(
-    f"Ваши текущие настройки:\n"
-    f"Прикреплять ссылки на товар - {switch.get(user_settings.use_link)}\n"
-    f"Ссылки на товар на площадках {user_settings.markets_link}\n"
-    f"При оценки использовать отзывы с площадок {user_settings.viewed_marketplaces}\n",
-    parse_mode="HTML",
-    reply_markup=get_setting_keyboard(),
-    )
-    await state.set_state(Change_settings.change)# Переводим состояние пользователя в выбор настроек
+# @settings_router.message(Command("settings"))
+# @settings_router.message(F.text.lower() == "пользовательские настройки")
+# async def settings(message: Message, state: FSMContext):
+#     #Достаём из БД настройки пользователя
+#     user_settings = get_settings(message.chat.id)
+#
+#     switch = {
+#         True:"да",
+#         False:"нет"
+#     }
+#
+#     await message.answer(
+#     f"Ваши текущие настройки:\n"
+#     f"Прикреплять ссылки на товар - {switch.get(user_settings.use_link)}\n"
+#     f"Ссылки на товар на площадках {user_settings.markets_link}\n"
+#     f"При оценки использовать отзывы с площадок {user_settings.viewed_marketplaces}\n",
+#     parse_mode="HTML",
+#     reply_markup=get_setting_keyboard(),
+#     )
+#     await state.set_state(Change_settings.change)# Переводим состояние пользователя в выбор настроек
 
 #Использовалось при тестировании, можно удалить
 #@settings_router.message(Command(commands=["pr"]))
