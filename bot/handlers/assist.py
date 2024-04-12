@@ -197,13 +197,17 @@ async def budget_max_catch(message: Message, state: FSMContext):
                 for i in recs:
                     await message.answer(
                         text=f"Название : {i[0][17]}\n"
-                             f"Общий рейтинг : {(i[1] + 1) * float(str(i[0][8])) + float(str(i[0][2])) * float(str(i[0][8]))}\n"
+                             f"Общий рейтинг : {str((i[1] + 1) * float(str(i[0][8])) + float(str(i[0][2])) * float(str(i[0][8]))).replace("[","").replace("]","")}\n"
                              f"Цена: {i[0][18]}\n"
                              f"{i[0][32]}"
                     )
             else:
                 await message.answer(text="К сожалению ничего не найдено")
             await state.clear()
+            await message.answer(
+                text="Вот и вернулись к началу",
+                reply_markup=get_start_keyboard()
+            )
     except ValueError:
         logging.error("Budget must be int", exc_info=True)
         print("Error while user try input budget_max")
