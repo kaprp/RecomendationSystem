@@ -51,6 +51,7 @@ async def cmd_start(message: Message, state: FSMContext):
 async def cmd_help(message: Message):
     await message.answer(
     f"В данный момент доступны команды:\n"
+    
     f"/start - открыть главное меню\n"
     f"/assist - получить рекомендацию в выборе наушников\n"
     f"/about_me - узнать обо мне\n",
