@@ -1,7 +1,6 @@
 import asyncio
 import logging
-import dataclasses
-from aiogram import Bot, Dispatcher, types
+from aiogram import Bot, Dispatcher
 from handlers import start_private, start_not_private,settings,assist
 
 
@@ -11,7 +10,7 @@ async def main():
     # Включаем логирование, чтобы не пропустить важные сообщения
     logging.basicConfig(level=logging.INFO)
     # Объект бота
-    bot = Bot(token=api)
+    bot = Bot(token="6727926334:AAE2adCb4mijRkha7ACkMpYZAzHDUFOjYDI")
     # Диспетчер
     dp = Dispatcher()
     # Подключаем попорядку роутеры
