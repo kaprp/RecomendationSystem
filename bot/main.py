@@ -10,7 +10,7 @@ async def main():
     # Включаем логирование, чтобы не пропустить важные сообщения
     logging.basicConfig(level=logging.INFO)
     # Объект бота
-    bot = Bot(token="6727926334:AAE2adCb4mijRkha7ACkMpYZAzHDUFOjYDI")
+    bot = Bot(token="Your api key")
     # Диспетчер
     dp = Dispatcher()
     # Подключаем попорядку роутеры
